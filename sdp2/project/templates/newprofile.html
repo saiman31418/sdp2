@@ -1,0 +1,56 @@
+ {% extends 'top.html' %}
+<head>
+    {% load static %}
+    {% block content %}
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Health care and well being systems</title>
+    <link rel="shortcut icon" href="{% static 'static/assets/images/fav.png' %}" type="image/x-icon">
+   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'static/assets/images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}" />
+</head>
+
+<div class="our-team">
+        <div class="container">
+
+
+            <div class="session-title row">
+                <h2>Our Team</h2>
+
+            </div>
+
+            <div class="row">
+                {% for i in ex %}
+                <div class="col-md-3 col-sm-6">
+                    <div class="card-1 team-member">
+                        <img src="{% static 'assets/images/team/t1.jpg' %}" alt="Team Member 1">
+
+
+                        <p><b>name:
+                            {{i.doctorname.name}}</b> <br> specialization:{{i.doctorname.specialization}}</p>
+
+                            email:{{i.doctorname.email}}<br>
+                            phone:{{i.doctorname.phone}}<br>
+                            maxappointments:{{i.doctorname.maxappointments}}<br>
+                           filled:{{i.filled}}<br>
+
+
+
+                    </div>
+                </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+
+    </div>
+{% endblock  %}

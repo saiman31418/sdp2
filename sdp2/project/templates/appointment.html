@@ -1,0 +1,175 @@
+<head>
+    {% load static %}
+     {% block body %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Appointment</title>
+    <link rel="shortcut icon" href="{% static 'static/assets/images/fav.png' %}" type="image/x-icon">
+   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'static/assets/images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}" />
+</head>
+    <header class="container-fluid">
+        <div class="container">
+            <div class="row top-row">
+                <div class="col-md-4 logo">
+                    <img src="{% static 'assets/images/logo.png' %}" alt="">
+                    <a data-toggle="collapse" data-target="#menu-jk" href="#menu-jk"><i class="fas d-block d-md-none small-menu fa-bars"></i></a>
+                </div>
+                <div class="col-md-8 navse">
+                    <div class="row">
+                        <div class="col-lg-4 d-none d-lg-block cinfo">
+                            <div class="cdetl">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="detail">
+                                    <b>Location</b>
+                                    <p>Rose Street, Toranto</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 d-none d-md-block cinfo">
+                            <div class="cdetl">
+                                <div class="icon">
+                                    <i class="far fa-envelope"></i>
+                                </div>
+                                <div class="detail">
+                                    <b>Email</b>
+                                    <p>support@smarteye.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 d-none d-md-block cinfo">
+                            <div class="cdetl">
+                                <div class="icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="detail">
+                                    <b>Call Us</b>
+                                    <p>+11 7200 20 40 30</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="menu-jk" class="nav-sectionmk  row">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About US</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="">Research</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="viewdoctors">view doctors</a></li>
+                     <li><a href="register">Register</a></li>
+                     <li><a href="login">Login</a></li>
+
+                    <li class="aply">
+                        <button class="btn btn-sm btn-light">Book Appointment</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+<br><br><br><br><br><br><br>
+<form action="appointment" method="post">
+  <div class="container">
+      {% csrf_token %}
+    <h1>Schedule a visit</h1>
+
+    <hr>
+
+      <label for="email"><br>Select location</br></label>
+      {{appointmentform.selectlocation}}<br>
+
+    <label for="email"><br>Select department</br></label>
+      {{appointmentform.selectdepartment}}<br>
+
+    <label for="psw"><b>Patientname</b></label>
+   {{appointmentform.patientname}}<br>
+
+    <label for="psw-repeat"><b>Patientmobile</b></label>
+    {{appointmentform.patientmobile}}
+      <label for="psw-repeat"><b>patientEmail</b></label>
+    {{appointmentform.patientEmail}}
+      <label for="psw-repeat"><b>doctor</b></label>
+    {{appointmentform.doctor}}<br>
+       <label for="psw-repeat"><b>Time</b></label>
+    {{appointmentform.time}}
+      <label for="psw-repeat"><b>previoushealthrecords</b></label>
+    {{appointmentform.previoushealthrecord}}<br>
+      <label for="psw-repeat"><b>previousmedication</b></label>
+    {{appointmentform.previousmedication}}
+
+
+
+    <hr>
+       <button type="submit" class="registerbtn">Book appointment</button>
+  </div>
+
+
+</form>
+{% endblock %}
+<style>
+    * {box-sizing: border-box}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>

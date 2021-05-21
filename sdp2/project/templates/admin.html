@@ -1,0 +1,90 @@
+
+
+
+
+
+
+{% block bodytag %}
+
+  {% load static %}
+  <body background="{% static 'assets/images/slider/slider-1.jpg' %}" style="background-size: auto auto;">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity=
+
+
+
+        <script src="{% static 'HealthCentre/javascript/windowHistory.js' %}"></script>
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="row" >
+        <div class="col-sm-6" style="margin-top:5%;">
+            <div class="jumbotron jumbotron-fluid" style = "height:100%;padding:5%;margin-left:5%;margin-right:5%;background:rgba(0,0,0,0.6);color:white;">
+                <h1 style="color:white" align="left">
+                  Login
+                </h1>
+
+                <li class="dropdown-divider" align="left" style="border-color:white"></li>
+                <br>
+                <form align="left" action="{% url 'Admin' %}" method="post" style="margin-right:5%">
+                    {% csrf_token %}
+
+                    <br>
+
+                    <div class="form-row" >
+                        <div class="col-12">
+                            <input name="username" type="text" class="form-control" placeholder="user">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="form-row">
+                        <div class="col-12">
+                            <input name="pass1" type="password" class="form-control" placeholder="Password">
+                        </div>
+                    </div>
+
+                    <br>
+                    <button type="submit" class="btn btn-warning btn-lg" >Login</button>
+                </form>
+
+                <br>
+
+                {% if message %}
+                    <div style="text-align:center;margin:0 auto;"class="alert alert-danger" role="alert" >
+                        {{ message }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+      <div class="col-sm-6" style="margin-top:5%;">
+          <div class="jumbotron jumbotron-fluid" style = "height:100%;padding:5%;margin-left:5%;margin-right:5%;background:rgba(0,0,0,0.6);color:white;">
+            <h1 style="color:white" align="left">
+              Sign Up
+            </h1>
+
+            <li class="dropdown-divider" align="left" style="border-color:white"></li>
+            <br>
+            <h2>Haven't registered yet?</h2>
+
+            <p class="lead">Register now to get all the benefits of the Health Centre!</p>
+            <a class="btn btn-primary btn-lg" href="{% url 'register' %}" role="button">Register</a>
+
+            <br>
+            <br>
+          </div>
+      </div>
+    </div>
+
+    <br>
+
+
+
+    <br>
+
+{% endblock %}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</head>
+{% load static %}
+<link rel="shortcut icon" href="{% static 'static/assets/images/fav.png' %}" type="image/x-icon">
+   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'static/assets/images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}" />
+</head>
+    <header class="container-fluid">
+        <div class="container">
+            <div class="row top-row">
+                <div class="col-md-4 logo">
+                    <img src="{% static 'assets/images/logo.png' %}" alt="">
+                    <a data-toggle="collapse" data-target="#menu-jk" href="#menu-jk"><i class="fas d-block d-md-none small-menu fa-bars"></i></a>
+                </div>
+                <div class="col-md-8 navse">
+                    <div class="row">
+                        <div class="col-lg-4 d-none d-lg-block cinfo">
+                            <div class="cdetl">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="detail">
+                                    <b>Location</b>
+                                    <p>Rose Street, Toranto</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 d-none d-md-block cinfo">
+                            <div class="cdetl">
+                                <div class="icon">
+                                    <i class="far fa-envelope"></i>
+                                </div>
+                                <div class="detail">
+                                    <b>Email</b>
+                                    <p>support@smarteye.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 d-none d-md-block cinfo">
+                            <div class="cdetl">
+                                <div class="icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="detail">
+                                    <b>Call Us</b>
+                                    <p>+11 7200 20 40 30</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="menu-jk" class="nav-sectionmk  row">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About US</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="">Research</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact_us.html">Contact Us</a></li>
+                     <li><a href="register">Register</a></li>
+                     <li><a href="login">Login</a></li>
+
+                    <li class="aply">
+                        <button class="btn btn-sm btn-light">Book Appointment</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+<body>
+<br><br><br><br><br><br><br>
+<center>
+<h2>Doctors  module</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+
+      <th scope="col">Patient name</th>
+      <th scope="col">symptoms</th>
+        <th scope="col">select patientname</th>
+
+      <th scope="col">remedy</th>
+    </tr>
+  </thead>
+  <tbody>
+  <form action="doctoradvice" method="post">
+
+  {% csrf_token %}
+  {% for i in doctoradvice %}
+
+
+
+
+    <tr>
+      <th scope="row">{{i.patientname.patientname}}</th>
+      <td>{{i.patientname.symptoms}}</td>
+      <td>{{i.remedy}}</td>
+        <td>
+
+           <a href="/doctor_crud/{{i.id}}" >edit</a>
+        </td>
+
+
+
+    </tr>
+
+
+    <tr>
+
+ {% endfor %}
+
+
+
+
+  </tbody>
+</table>
+
+</body>
+ <button>submit</button>
+       </form>
+</html>
+</center>

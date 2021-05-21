@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  {% block body %}
+  {% load static %}
+<head>
+  {% csrf_token %}
+
+  <title>Patients module</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="shortcut icon" href="{% static 'static/assets/images/fav.png' %}" type="image/x-icon">
+   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'static/assets/images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}" />
+</head>
+<body>
+
+
+            <div id="menu-jk" class="nav-sectionmk  row">
+                <ul>
+                    <li><a href="statusv">patient delay</a></li>
+
+                    <li><a href="new">symptoms visualization</a></li>
+                    <li><a href="ambulance">Ambulance</a></li>
+                     <li><a href="doctorregister">Doctor  Register</a></li>
+                     <li><a href="patientsdashboard">patients Dashboard</a></li>
+                       <li><a href="AdminAppointments">Adminappointments</a></li>
+                    <li><a href="ambulancevis">Accidents visualization</a></li>
+                     <li><a href="mp">mp</a></li>
+
+                    <li class="aply">
+                        <button class="btn btn-sm btn-light">Book Appointment</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ################# Slider Starts Here#######################--->
+    <div class="slider">
+        <!-- Set up your HTML -->
+        <div class="owl-carousel ">
+
+            <div class="item">
+                <div class="slider-img"><img src="{% static 'assets/images/slider/slider-1.jpg' %}" alt=""></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
+                            <div class="slider-captions">
+                                <h1 class="slider-title">It's time for better help.</h1>
+                                <p class="slider-text hidden-xs">We can help you conquer a wide range of psychological and emotional problems.</p>
+                                <a href="appointment" class="btn btn-primary hidden-xs">Schedule A Visit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="slider-img"> <img src="{% static 'assets/images/slider/slider-2.jpg' %}" alt=""></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
+                            <div class="slider-captions">
+                                <h1 class="slider-title">Meet our psychiatrists</h1>
+                                <p class="slider-text hidden-xs">Our psychiatrists are highly skilled to meet your unique needs.</p>
+                                <a href="" class="btn btn-primary hidden-xs">Meet Psychiatrists</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--*************** Key Features Starts Here ***************-->
+
+    <div id="features" class="features container-fluid">
+        <div class="container">
+            <div class="session-title">
+                <h2>Key Features of our Hospital</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Voluptatem, inventore</p>
+            </div>
+            <div class="ker-featur-row row">
+                <div data-aos="fade-right" data-aos-duration="1500" class="col-md-4 featurecol feature-left">
+                    <div class="single-feature">
+
+                        <div class="detail">
+                            <h6>100% Safety</h6>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Voluptatem, inventore</p>
+                        </div>
+                        <div class="icon">
+                            <i class="far fa-bell"></i>
+                        </div>
+
+
+                    </div>
+                    <div class="single-feature">
+
+                        <div class="detail">
+                            <h6>Friendly Doctors</h6>
+                            <p>Lorem ipsum dolor sit amet, conse ctetur adipisicing elit.
+                                Voluptatem, inventore</p>
+                        </div>
+                        <div class="icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4 featur-image">
+                    <img src="{% static 'assets/images/boct.jpg' %}" alt="">
+                </div>
+                <div data-aos="fade-left" data-aos-duration="1500" class="col-md-4 featurecol feature-right">
+
+                    <div class="single-feature">
+                        <div class="icon">
+                            <i class="far fa-images"></i>
+                        </div>
+                        <div class="detail">
+                            <h6>Clean Environment</h6>
+                            <p>Lorem ipsum dolor sit amet, consec tetur adipi sicing elit.
+                                Voluptatem, inventore</p>
+                        </div>
+                    </div>
+                    <div class="single-feature">
+                        <div class="icon">
+                            <i class="fab fa-audible"></i>
+                        </div>
+                        <div class="detail">
+                            <h6>Medical Research</h6>
+                            <p>Lorem ipsum dolor sit amet, conse ctetur adipisicing elit.
+                                Voluptatem, inventore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+<script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'assets/js/popper.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js' %}"></script>
+<script src="{% static 'assets/plugins/slider/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/script.js' %}"></script>
+{% endblock %}

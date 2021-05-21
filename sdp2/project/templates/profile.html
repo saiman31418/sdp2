@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>patientsprofile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h2>patientsprofilr</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">location</th>
+            <th scope="col">name</th>
+      <th scope="col">department</th>
+      <th scope="col">date</th>
+      <th scope="col">patient name</th>
+        <th scope="col">time</th>
+          <th scope="col">Doctor</th>
+        <th scope="col">previoushealthrecord</th>
+        <th scope="col">previousmediation</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+
+
+    <tr>
+         <th scope="row">{{i.selectlocation}}</th>
+      <th scope="row">{{i.patientname}}</th>
+      <td>{{i.selectdepartment}}</td>
+      <td>{{i.datetime}}</td>
+
+      <td>{{i.patientname}}</td>
+          <td>{{i.time}}</td>
+        <td>{{i.doctor}}</td>
+        <td>{{i.previoushealthrecord}}</td>
+         <td>{{i.previousmedication}}</td>
+
+
+
+
+    </tr>
+    <tr>
+
+
+
+
+  </tbody>
+</table>
+
+</body>
+</html>
